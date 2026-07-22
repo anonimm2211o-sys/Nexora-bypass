@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEXORA // Link Bypass</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<button class="sound-toggle" id="soundToggle">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" id="soundIcon">
+    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+    <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+    <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+  </svg>
+</button>
+
+<div class="bg-grid"></div>
+<div class="orb orb1"></div>
+<div class="orb orb2"></div>
+<div class="orb orb3"></div>
+
+<div class="shell">
+
+  <div class="chrome">
+    <span class="dot"></span>
+    <span class="url">nexora.dev/bypass</span>
+    <span>⋮</span>
+  </div>
+
+  <div class="hero">
+    <div class="eyebrow">SYSTEM ONLINE</div>
+    <h1>Tembus semua<br />link dari <span class="accent">NEXORA</span></h1>
+    <p>Tempel URL kamu, selesaikan verifikasi (atau pakai API key), dan proses berjalan otomatis. Cepat, bersih, tanpa redirect sampah.</p>
+  </div>
+
+  <div class="panel">
+    <div class="input-wrap">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" /><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" /></svg>
+      <input type="text" id="urlInput" placeholder="https://link-terkunci.xyz/..." />
+      <button class="clip-btn" id="pasteBtn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="8" y="2" width="8" height="4" rx="1" /><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" /></svg>
+      </button>
+    </div>
+
+    <div class="api-toggle" id="apiToggle">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="15" r="4" /><path d="M10.5 12.5 19 4l1.5 1.5L18 8l2 2-2.5 2.5L15 10l-2.5 2.5" /></svg>
+      Gunakan API Key
+    </div>
+
+    <button class="bypass-btn" id="bypassBtn">
+      <span class="spinner"></span>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" class="bolt-icon"><path d="M13 2 3 14h7l-1 8 11-14h-7l1-6z" /></svg>
+      <span class="btn-label" id="btnLabel">Bypass</span>
+    </button>
+
+    <div class="result" id="resultBox">
+      <div class="result-head">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12" /></svg>
+        Link berhasil diproses
+      </div>
+      <div class="result-link" id="resultLink">—</div>
+      <div class="result-note" id="resultNote">Hasil bypass dari server real.</div>
+    </div>
+
+    <div class="tags">
+      <span class="tag">⚡ instant queue</span>
+      <span class="tag">🛡️ captcha aware</span>
+      <span class="tag">∞ unlimited URL</span>
+      <span class="tag">✦ zero junk</span>
+    </div>
+  </div>
+
+  <div class="stats-card">
+    <div class="stats-title">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
+      Statistik Global
+    </div>
+    <div class="stats-grid">
+      <div class="stat-box">
+        <div class="stat-icon total">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" /><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" /></svg>
+        </div>
+        <div class="stat-num" id="statTotal">0</div>
+        <div class="stat-label">Total Link</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-icon ok">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12" /></svg>
+        </div>
+        <div class="stat-num ok" id="statOk">0%</div>
+        <div class="stat-label">Berhasil</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-icon fail">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
+        </div>
+        <div class="stat-num fail" id="statFail">0%</div>
+        <div class="stat-label">Gagal</div>
+      </div>
+    </div>
+    <div class="bar"><div class="bar-fill" id="barFill" style="width:0%"></div></div>
+    <div class="bar-legend">
+      <span class="ok-t">Berhasil · <span id="okCount">0</span></span>
+      <span class="fail-t">Gagal · <span id="failCount">0</span></span>
+    </div>
+  </div>
+
+  <footer>NEXORA — bypass engine real via api.bypass.vip</footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
